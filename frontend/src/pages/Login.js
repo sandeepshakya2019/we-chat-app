@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Container,
   Paper,
@@ -44,6 +44,10 @@ function Login() {
 
     // event.target.value = null;
   };
+
+  useEffect(() => {
+    isLogin ? (document.title = "Login") : (document.title = "Signup");
+  }, [isLogin]);
 
   return (
     <Container
